@@ -42,13 +42,15 @@ client.on('message', async message => {
         .addField("c%ping", "Shows latency of bot.")
         .addField("c%version", "Shows bot version")
         .addField("c%abouteas", "Shows information about the Emergency Alert System (EAS)")
+        .addField("c%credits", "Shows the credits and development team who helped work for the bot.")
+        .addField("c%changelog", "Shows the changelog for the latest update.")
         .setFooter("© RedAl3rt, 2020 All rights reserved.")
 
         message.channel.send(embed)
     }
 
     if(message.content == prefix + "version") {
-        message.channel.send("Version beta 1.0")
+        message.channel.send("Version beta 1.1")
     }
 
     if (message.content == prefix + "abouteas") {
@@ -61,6 +63,34 @@ client.on('message', async message => {
 
         message.channel.send(embed)
     }
+
+    if (message.content == prefix + "credits") {
+
+        const embed = new MessageEmbed()
+        .setTitle("Credits:")
+        .setColor(0x0000FF)
+        .addField("Developer:", "RedAl3rt // T3chyy")
+        .addField("Made for the funniest goofball:", "ClayRanger143")
+        .addField("More to come!", "Overtime. This bot will be a one of a kind to the community. and the bot development team will expand!")
+        .setFooter("© RedAl3rt, 2020 All rights reserved.")
+
+        message.channel.send(embed)
+
+    }
+
+    if(message.content == prefix + "changelog") {
+        const embed = new MessageEmbed()
+        .setTitle("Changelog for Version beta 1.1")
+        .setColor(0x0000FF)
+        .addField("Credits!", "View the credits for the bot, such as supporters, developers, etc")
+        .addField("Changelog!", "The changelog is here. This page updates every update. Make sure you keep watch every time it's updated!")
+
+        message.channel.send(embed)
+    }
+
+    
+
+
 
 });
 
