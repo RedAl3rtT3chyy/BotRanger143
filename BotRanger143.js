@@ -11,7 +11,9 @@ client.login(process.env.BOT_TOKEN)
 client.on('ready', () => {
 
     client.user.setPresence({ activity: { name: 'Loading..' }, status: 'dnd' })
-    console.log("Loading..")
+    //The (BotRanger143 Window) doesn't mean anything.. This is to make it simplier for me to tell what bot process it is
+    //since I host 2 bots and I need to tell what window a specific bot is so don't close the wrong bot process.
+    console.log("Loading.. (BotRanger143 Window)")
     setTimeout(() => {
         console.log("Loading completed.")
         client.user.setPresence({ activity: { name: 'for DAVIDSON COUNTY | c%help', type: "WATCHING" }, status: 'online' })
@@ -44,6 +46,7 @@ client.on('message', async message => {
         .addField("c%abouteas", "Shows information about the Emergency Alert System (EAS)")
         .addField("c%credits", "Shows the credits and development team who helped work for the bot.")
         .addField("c%changelog", "Shows the changelog for the latest update.")
+        .addField("c%invite", "Invite BotRanger143 to your server!")
         .setFooter("© RedAl3rt, 2020 All rights reserved.")
 
         message.channel.send(embed)
@@ -88,9 +91,12 @@ client.on('message', async message => {
         message.channel.send(embed)
     }
 
+
+    if(message.content == prefix + "invite") {
+        message.author.send("Invite to your server using: \nhttps://discordapp.com/api/oauth2/authorize?client_id=701562745081954435&permissions=0&scope=bot")
+    }
+
     
-
-
 
 });
 
